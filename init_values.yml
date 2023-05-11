@@ -1,0 +1,28 @@
+stock:
+  coca_cola:
+    formatted_name: "Coca-Cola"
+    price: 200
+    qty: 10
+  sprite:
+    formatted_name: "Sprite"
+    price: 250
+    qty: 10
+  fanta:
+    formatted_name: "Fanta"
+    price: 225
+    qty: 10
+  orange_juice:
+    formatted_name: "Orange Juice"
+    price: 300
+    qty: 10
+  water:
+    formatted_name: "Water™"
+    price: 325
+    qty: 0
+till:
+  25: 5
+  50: 5
+  100: 5
+  200: 5
+  300: 5
+  500: 5

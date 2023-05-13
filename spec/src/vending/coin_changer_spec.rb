@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative '../coin_changer'
+require_relative '../../../src/vending'
 
-describe CoinChanger do
+describe Vending::CoinChanger do
   subject { described_class.new(total_change, till).process }
 
   describe '#process' do
@@ -29,7 +29,7 @@ describe CoinChanger do
       let(:till) { { 25 => 2, 50 => 3 } }
 
       it 'raises insufficient coins error' do
-        expect{ subject }.to raise_error(CoinChanger::InsufficientCoins)
+        expect{ subject }.to raise_error(Vending::CoinChanger::InsufficientCoins)
       end
     end
   end
@@ -60,7 +60,7 @@ describe CoinChanger do
       let(:till) { { 25 => 2, 50 => 3 } }
 
       it 'raises insufficient coins error' do
-        expect{ subject }.to raise_error(CoinChanger::InsufficientCoins)
+        expect{ subject }.to raise_error(Vending::CoinChanger::InsufficientCoins)
       end
     end
   end

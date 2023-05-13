@@ -1,21 +1,21 @@
 stock:
-  coca_cola:
+  - id: 1
     formatted_name: "Coca-Cola"
     price: 200
     qty: 10
-  sprite:
+  - id: 3
     formatted_name: "Sprite"
     price: 250
     qty: 10
-  fanta:
+  - id: 4
     formatted_name: "Fanta"
     price: 225
     qty: 10
-  orange_juice:
+  - id: 5
     formatted_name: "Orange Juice"
     price: 300
     qty: 10
-  water:
+  - id: 6
     formatted_name: "Water™"
     price: 325
     qty: 0

@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module Vending
+  # Prints out information for users
   class Monitor
     def greet
       puts 'Welcome to Vendico™'
@@ -39,15 +42,32 @@ module Vending
       print '> '
     end
 
-    def give_out_change
+    def print_change(coins)
       puts 'Please take your change:'
 
-      str_arr = coins.map do |coin_value, amount|
-        till[coin_value] -= amount
+      print_formatted_change(coins)
+    end
+
+    def print_change_error(coins)
+      puts 'We couldn\'t find change for you. Here are your coins:'
+
+      print_formatted_change(coins)
+    end
+
+    def print_formatted_change(coins)
+      formatted_change = coins.map do |coin_value, amount|
         "#{CurrencyFormatter.format coin_value} x #{amount}"
       end
 
-      puts str_arr.join(', ')
+      puts formatted_change.join(', ')
+    end
+
+    def print_item(name)
+      puts "Your item: #{name}. Enjoy!"
+    end
+
+    def out_of_stock(item)
+      puts "Sorry, we are temporarily out of #{item[:formatted_name]}! Please pick another item."
     end
   end
 end

@@ -6,6 +6,7 @@ require 'yaml'
 require_relative 'src/vending'
 
 init_values = YAML.load_file('./init_values.yml', symbolize_names: true)
+ENV['environment'] = 'development'
 
 def vending_ascii
   <<-VENDING_ASCII

@@ -2,6 +2,7 @@
 
 module Vending
   require_relative 'vending/machine'
+  require_relative 'vending/till'
   require_relative 'vending/currency_formatter'
   require_relative 'vending/monitor'
   require_relative 'vending/coin_changer'

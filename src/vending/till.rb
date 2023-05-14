@@ -17,14 +17,14 @@ module Vending
       coin = coin_value.to_i
 
       coins[coin] += 1
-      transaction[coin] += 1
+      transaction[coin] = (transaction[coin] || 0) + 1
       @transaction_total += coin
     end
 
     def new_transaction
       @errors = []
       @transaction_total = 0
-      @transaction = coins.transform_values { |_v| 0 }
+      @transaction = {}
     end
 
     def valid_coins

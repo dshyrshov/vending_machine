@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Vending
+  # Handles coin I/O
   class Till
     attr_reader :coins, :transaction, :transaction_total, :errors, :monitor
 
@@ -37,16 +38,16 @@ module Vending
       return_change(change)
     rescue CoinChanger::InsufficientCoins
       errors.push(:insufficient_coins)
-      return_change(transaction)
+      return_change(transaction.select { |_k, v| v.positive? })
     end
+
+    private
 
     def return_change(change)
       change.each { |coin_value, amount| coins[coin_value] -= amount }
 
       errors.empty? ? monitor.print_change(change) : monitor.print_change_error(change)
     end
-
-    private
 
     def valid_coin?(coin_value)
       numeric?(coin_value) && coins.keys.include?(coin_value.to_i)

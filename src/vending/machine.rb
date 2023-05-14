@@ -1,7 +1,7 @@
-#!/usr/bin/env ruby
 # frozen_string_literal: true
 
 module Vending
+  # Handles ordering experience
   class Machine
     attr_reader :stock, :monitor, :till
 
